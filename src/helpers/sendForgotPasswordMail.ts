@@ -6,7 +6,7 @@ export const resend = new Resend(process.env.RESEND_API_KEY);
 export async function sendForgotPasswordMail(email: string, Code: string) {
   try {
     const { data, error } = await resend.emails.send({
-      from: "jashehz@gmail.com",
+      from: "onboarding@resend.dev",
       to: email,
       subject: "Banao Auth | Forget Password Code",
       react: MailComponent({ email, otp: Code }),
